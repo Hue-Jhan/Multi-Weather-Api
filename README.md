@@ -1,5 +1,7 @@
 # Multi Weather Api
-Spring boot framework API that compares multiple Weather APIs/scrapers to deliver the best possible forecast, and shows daily/hourly data from each API.
+Rest Api made using Spring boot framework that compares multiple Weather APIs/scrapers to deliver the best possible forecast for a given location, and shows daily/hourly data from each API.
+
+In the image below is an example of a simple request for the weather forecast of Rome for the next few days.
 
 # ⚙ How to run
 
@@ -16,7 +18,7 @@ You will also need a ```.env``` file and an updated ```application.properties```
 ```cd Multi-Weather-Api/code```
 
 
-<img src="media/wapi_terminal_logs.png" align="right" width=400>
+<img src="media/wapi_terminal_logs.png" align="right" width=450>
 
 
 ```./mvnw clean package -DskipTests```
@@ -33,17 +35,21 @@ The API will be available at http://localhost:8080/api/, the  PostgreSQL instanc
 ```ngrok http 8080``` once you add the ngrok authtoken.
 
 
-### 3) Checking logs and db  <img src="media/wapi_logs.png" align="right" width=300>
+### 3) Checking logs and db 
+
+<img src="media/wapi_logs.png" align="right" width=350>
 
 You can connect to the DB manually with ```docker exec -it weather_db psql -U weath_api_logger -d weather_logs``` in the db container terminal, then with ```SELECT * FROM request_logs;``` you can view user info such as IPs, requests, api data, etc.
 
 # 💻 Code & APIs
 
-The backend is a light rework of my previous repo (Multi Weather App)[https://github.com/Hue-Jhan/Multi-Weather-App]. The APIs i used are:
+This backend is a light rework of my previous repo [Multi Weather App](https://github.com/Hue-Jhan/Multi-Weather-App), it's handled by the WeatherController class. I included another api called HelloController just for fun.
+
+The APIs i used in WeatherController are:
 
 - GeoCodeMaps Api ([here](https://geocode.maps.co/));
 - VisualCrossing Api ([here](https://www.visualcrossing.com/weather-query-builder/)), international;
-- AccuWeather Api, ([here](https://developer.accuweather.com/)), international but requires location key from each city, which requires its Nation code, because of this i set this Api for italian cities only;
+- AccuWeather Api, ([here](https://developer.accuweather.com/)), international but requires location key from each city, which requires its Nation code, because of this i set this Api for italian cities only, but this api sucks for various reasons so don't use it;
 - OpenMeteo Api ([here](https://open-meteo.com/en/docs)), international;
 - WeatherApi.com Api ([here](https://www.weatherapi.com/)), international;
 - IlMeteo (scraper, [here](http://ilmeteo.it/meteo/)), only works for Italy and some general european locations;
