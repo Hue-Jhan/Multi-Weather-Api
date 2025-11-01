@@ -1,13 +1,18 @@
 # Multi Weather Api
 Spring boot framework API that compares multiple Weather APIs/scrapers to deliver the best possible forecast, and shows daily/hourly data from each API.
 
-# How to run
+# ⚙ How to run
 
 ### 1) Requirements
-Docker, Docker Compose, Java 23+, Maven, and a ```.env``` file with active working APIs.
+Docker, Docker Compose, Java 23+, Maven.
+
+You will also need a ```.env``` file and an updated ```application.properties``` with with active working APIs.
 
 ### 2) Compiling the app 
+
 ```cd Multi-Weather-Api/code```
+
+```./mvnw clean package -DskipTests```
 
 ```docker build -t weather-api:latest . ```
 
@@ -23,7 +28,7 @@ The API will be available at http://localhost:8080/api/, the  PostgreSQL instanc
 
 You can connect to the DB manually with ```docker exec -it weather_db psql -U weath_api_logger -d weather_logs``` in the db container terminal, then with ```SELECT * FROM request_logs;``` you can view user info such as IPs, requests, api data, etc.
 
-# 💻 Code
+# 💻 Code & APIs
 a
 
 e
