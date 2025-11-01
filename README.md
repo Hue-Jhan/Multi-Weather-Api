@@ -11,7 +11,7 @@ In the image below is an example of a simple request for the weather forecast of
 ### 1) Requirements
 Docker, Docker Compose, Java 23+, Maven.
 
-You will also need a ```.env``` file and an updated ```application.properties``` with with active working APIs.
+You will also need a ```.env``` file and an updated ```application.properties``` with working APIs.
 
 ### 2) Compiling the app 
 
@@ -40,6 +40,8 @@ The API will be available at http://localhost:8080/api/, the  PostgreSQL instanc
 <img src="media/wapi_logs.png" align="right" width=350>
 
 You can connect to the DB manually with ```docker exec -it weather_db psql -U weath_api_logger -d weather_logs``` in the db container terminal, then with ```SELECT * FROM request_logs;``` you can view user info such as IPs, requests, api data, etc.
+
+You can find more images about the api in the media folder.
 
 # 💻 Code & APIs
 
