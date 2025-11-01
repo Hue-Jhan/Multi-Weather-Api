@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16
+    container_name: weather_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      TZ: Europe/Rome
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+  weather-api:
+    image: weather-api:latest
+    container_name: weather_api
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/app/logs
+      - ./src/main/resources/application.properties:/app/config/application.properties
+    environment:
+      SPRING_CONFIG_LOCATION: file:/app/config/application.properties
+    restart: always
+    command: ["java", "-jar", "/app/app.jar"]
+
+volumes:
+  pgdata:
