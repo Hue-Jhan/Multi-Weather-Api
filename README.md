@@ -58,10 +58,11 @@ The APIs i used in WeatherController are:
 - Windy (work in progress Api, [here](https://api.windy.com/)), international.
 
 
-The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and displayed to the user. The daily data is saved into storage and updated every 2 hours for efficiency (and to not waste api requests).
+The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and ....
 
-Here's a video example of me adding Milan as a location, keep in mind that you can only add cities in italy because some of the apis i used only work for italy. You can fix this by changing some of the remaining apis and adding your local weather apis.
+postgres, user data...
 
+logs, 
 
 ### 📊 Average Data Algorithm
 
