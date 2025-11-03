@@ -60,9 +60,7 @@ The APIs i used in WeatherController are:
 
 The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and ....
 
-postgres, user data...
-
-logs, 
+postgres, user data, logs, env/app.properties, db... 
 
 ### 📊 Average Data Algorithm
 
