@@ -58,9 +58,11 @@ The APIs i used in WeatherController are:
 - Windy (work in progress Api, [here](https://api.windy.com/)), international.
 
 
-The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and ....
+The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and given as a json result.
 
-postgres, user data, logs, env/app.properties, db... 
+Data such as user's ip, request, request params, are saved in  requests.log file and also in a Postgresql instance.
+
+Make sure to have active and working API keys in the ```.env/app.properties``` file. Some keys are extracted from the ```.env```, others are taken directly from ```app.properties```, i tried using exclusively the .env file but i had some issues trying to set this up, i tried using several libraries but i gave up and just went with hardcoding them in app.properties. 
 
 ### 📊 Average Data Algorithm
 
