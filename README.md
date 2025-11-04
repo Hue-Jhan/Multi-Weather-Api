@@ -1,4 +1,4 @@
-# Multi Weather Api
+# ⛅ Multi Weather Api
 Rest Api made using Spring boot framework that compares multiple Weather APIs/scrapers to deliver the best possible forecast for a given location, and shows daily/hourly data from each API.
 
 In the image below is an example of a simple request for the weather forecast of Rome for the next few days.
@@ -62,7 +62,7 @@ The code makes requests to the APIs to extract the current weather data, and the
 
 Data such as user's ip, request, request params, are saved in  requests.log file and also in a Postgresql instance.
 
-Make sure to have active and working API keys in the ```.env/app.properties``` file. Some keys are extracted from the ```.env```, others are taken directly from ```app.properties```, i tried using exclusively the .env file but i had some issues trying to set this up, i tried using several libraries but i gave up and just went with hardcoding them in app.properties. 
+Make sure to have active and working API keys in the ```.env/app.properties``` files. Some keys are extracted from the ```.env```, others are taken directly from ```app.properties```, i tried using exclusively the .env file but i had some issues trying to set it up, i tried using several libraries but i gave up and just went with hardcoding them in ```app.properties```. 
 
 ### 📊 Average Data Algorithm
 
