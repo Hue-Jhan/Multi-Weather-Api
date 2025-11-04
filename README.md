@@ -73,6 +73,12 @@ When calculating the average weather condition (like cloudy or sunny), getting t
 
 Why isn't Sunny 0? because statistically (i mean from what i've experienced) if the weather says it's going to be a Sunny day, there aren't going to be sudden changes in the forecast and the weather will be almost certainly sunny through the whole day, so i might as well say -1 or -5 cuz the result will most likely not change, while if the forecast says cloudy then there might be chanches of rain, which means the calculations have to be more precise to accurately predict weather it's going to rain or not. I did not include the "chanche of rain" variable in the data types, however EVERY api i used has this value, if you want you can modify the entire code, fetch this value and add it to the data types. 
 
+I removed AccuWeather Api because:
+- its logic was slightly modified,
+- i didn't want to implement all the sub-functions and requests to make it work properly,
+- my api key was discontinued and i had issues trying to make the new one,
+- i didn't wanna waste one more minute trying to understand this api while i could use much simpler and more accurate ones.
+
 The average wind direction is calculated using radians of course, then turned into degrees and the string corresponding to the name of the direction (eg SSW for south-south-west). The remaining data like temperature and windspeed is a simple median calculation.
 
 
