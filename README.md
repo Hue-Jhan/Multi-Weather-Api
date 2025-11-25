@@ -1,5 +1,5 @@
 # ⛅ Multi Weather Api
-Rest Api made using Spring boot framework that compares multiple Weather APIs/scrapers to deliver the best possible forecast for a given location, and shows daily/hourly data from each API.
+Rest Api made using Spring boot framework that compares multiple Weather APIs/scrapers to deliver the best possible forecast for a given location, it also shows daily/hourly data from each API and saves the requests along with the IP who made it in a file and in a PostgreSql db.
 
 In the image below is an example of a simple request for the weather forecast of Rome for the next few days.
 
@@ -60,7 +60,7 @@ The APIs i used in WeatherController are:
 
 The code makes requests to the APIs to extract the current weather data, and the forecast data for the next few days, including hourly data. The weather informations are then saved into custom data types, an average result is calculated and given as a json result.
 
-Data such as user's ip, request, request params, are saved in  requests.log file and also in a Postgresql instance. The psql database as well as the table and user are created automtically, in the ```init.sql``` file you can view the table syntax.
+Data such as user's ip, request, request params, are saved in the requests.log file and also in a Postgresql instance. The psql database as well as the table and user are created automtically, in the ```init.sql``` file you can view the table syntax.
 
 Make sure to have active and working API keys in the ```.env/app.properties``` files. Some keys are extracted from the ```.env```, others are taken directly from ```app.properties```, i tried using exclusively the .env file but i had some issues trying to set it up, i tried using several libraries but i gave up and just went with hardcoding them in ```app.properties```. 
 
